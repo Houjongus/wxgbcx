@@ -1,17 +1,16 @@
-# 用一个干净的基础镜像，强制重新拉取
+# 保留你项目原有的 Python 基础镜像逻辑，改成 Railway 兼容版
 FROM python:3.11-slim
 
-# 设置工作目录
 WORKDIR /app
 
-# 先复制文件
+# 复制项目所有文件
 COPY . .
 
-# 强制安装 Flask（加上 --force-reinstall 确保不使用缓存）
-RUN pip install --no-cache-dir --force-reinstall flask
+# 安装依赖（包含 requirements.txt 里的所有包，加 gunicorn 提升稳定性）
+RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
-# 声明端口
-EXPOSE 5000
+# 暴露端口（Railway 会自动映射）
+EXPOSE $PORT
 
-# 启动命令
-CMD ["python", "app.py"]
+# 关键：适配 Railway 端口，用 gunicorn 启动 web_server.py
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:$PORT web_server:app"]
