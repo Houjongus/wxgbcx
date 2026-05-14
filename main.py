@@ -1,4 +1,12 @@
 # -*- coding: utf8 -*-
+import os
+import sys
+
+# 强制锁定项目根目录，解决Railway导包失败
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, ROOT_DIR)
+
+from util.aes_help import encrypt_data, decrypt_data
 import math
 import traceback
 from datetime import datetime
