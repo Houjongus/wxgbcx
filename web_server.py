@@ -402,7 +402,7 @@ HTML_DASHBOARD = """
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏃 Zepp Life 刷步数</h1>
+            <h1>🏃 遇见冰粉 步数之旅</h1>
             <div>
                 <span class="user-info">用户: {{ username }}</span>
                 <a href="/logout"><button class="logout-btn">退出</button></a>
