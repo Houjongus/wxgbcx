@@ -87,7 +87,7 @@ HTML_LOGIN = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>遇见手作冰粉 步数之旅 - 登录</title>
+    <title>遇见冰粉 步数之旅 - 登录</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -203,8 +203,8 @@ HTML_LOGIN = """
 </head>
 <body>
     <div class="login-box">
-        <h1>🏃 遇见手作冰粉  步数之旅</h1>
-        <p class="subtitle">每人独立配置，互不干扰</p>
+        <h1>🏃 遇见冰粉  步数之旅</h1>
+        <p class="subtitle">关注遇见冰粉公众号，永久免费使用</p>
 
         {% if message %}
         <div class="status {{ message_type }}">{{ message }}</div>
@@ -263,7 +263,7 @@ HTML_DASHBOARD = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>遇见手作冰粉  步数之旅 - 控制台</title>
+    <title>遇见冰粉  步数之旅 - 控制台</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
